@@ -12,7 +12,7 @@ function guess() {
 		return false;
 	} 
 	else {
-		attempt++;
+		attempt.value ++;
 	}
 /* STEP 14/15/16 */	
 	if(getResults(input) == true) {
@@ -20,7 +20,7 @@ function guess() {
 		showAnswer(true);
 		showReplay();
 	}
-	else if(attempt >= 10) {
+	else if(attempt.value >= 10) {
 		setMessage('You Lose! :(');
 		showAnswer(false);
 		showReplay();
@@ -41,7 +41,7 @@ function setHiddenFields() {
 }
 /* STEP 9 */
 function setMessage(message){
-	message = document.getElementById('message').innerHTML;
+	document.getElementById('message').innerHTML = message;
 }
 /* STEP 10 */
 function validateInput(input){
@@ -73,16 +73,17 @@ function getResults(input) {
 	results.innerHTML += div;
 	
 /* STEP 13 */	
-	return (input == answer);
+	return (input == answer.value);
 }
 /* STEP 17 */
 function showAnswer(show){
-	var code = document.getElementById('code').innerHTML;
+	var code = document.getElementById('code');
+	code.innerHTML = answer.value;
 	if (show == true){
-		code.addClass('success');
+		code.className = 'success';
 	}
 	else {
-		code.addClass('failure');
+		code.className = 'failure';
 	}
 }
 /* STEP 18 */
