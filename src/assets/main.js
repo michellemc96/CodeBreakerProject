@@ -80,10 +80,10 @@ function showAnswer(show){
 	var code = document.getElementById('code');
 	code.innerHTML = answer.value;
 	if (show == true){
-		code.className = 'success';
+		code.className += ' success';
 	}
 	else {
-		code.className = 'failure';
+		code.className += ' failure';
 	}
 }
 /* STEP 18 */
